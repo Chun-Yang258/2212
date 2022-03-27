@@ -137,7 +137,7 @@ public class MainUI extends JFrame implements ActionListener {
 
 		scrollPane.setPreferredSize(new Dimension(800, 300));
 		table.setFillsViewportHeight(true);
-		
+		table.setRowSelectionInterval(dtm.getRowCount() - 1, dtm.getRowCount() - 1);
 
 		JPanel east = new JPanel();
 //		east.setLayout();
@@ -209,6 +209,8 @@ public class MainUI extends JFrame implements ActionListener {
 			creator.createCharts();
 		} else if ("addTableRow".equals(command)) {
 			dtm.addRow(new String[3]);
+			table.setRowSelectionInterval(dtm.getRowCount() - 1, dtm.getRowCount() - 1);
+			
 		} else if ("remTableRow".equals(command)) {
 			int selectedRow = table.getSelectedRow();
 			if (selectedRow != -1)

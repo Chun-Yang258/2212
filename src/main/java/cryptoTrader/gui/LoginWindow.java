@@ -32,6 +32,8 @@ import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
+import cryptoTrader.login.LoginServer;
+
 /* @author Chun Yang 250653628
  * 
  * Description: This class provides the login window and input field 
@@ -42,7 +44,7 @@ public class LoginWindow extends JFrame {
 	private static LoginWindow instance;
 	
 	/*
-	 * A singleton design to return an instance of the login window
+	 * A singleton design to return only one instance of the login window
 	 * @returns login window instance
 	 * */
 	public static LoginWindow getInstance() {
@@ -78,6 +80,9 @@ public class LoginWindow extends JFrame {
 		submitButton.setSize(100, 30);
 		this.add(submitButton);
 		this.setVisible(true);
+		
+		LoginServer server = new LoginServer(usernameInput, passwordInput);
+		submitButton.addActionListener(server);
 		
 	}
 	
