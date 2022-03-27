@@ -10,6 +10,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+/*
+ * @author Chun Yang 250653628
+ * Description: This is UI for error message
+ * */
 public class ErrorUI extends JFrame {
 	public ErrorUI(String message) {
 		// Set window title, size, location
